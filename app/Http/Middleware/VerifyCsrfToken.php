@@ -12,6 +12,8 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        'https://app.lost-lions.com/register/',
+        'https://app.lost-lions.com/api/*',
+        'https://app.lost-lions.com/*'
     ];
 }
