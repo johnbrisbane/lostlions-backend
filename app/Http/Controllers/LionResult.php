@@ -181,7 +181,6 @@ class LionResult extends Controller
         $record = Lion_result::where('active', '=', '1')
             ->whereNull('wallet_id')
             ->whereNull('mint_address')
-            ->where('result', '=', '1') //devnet
             ->inRandomOrder()
             ->first();
 
