@@ -23,7 +23,6 @@ Route::apiResource('result', LionResult::class);
 
 Route::group(['prefix' => 'v1'], function () {
     Route::get('/getRandomResult', 'App\Http\Controllers\LionResult@GetRandomResult');
-    Route::get('/getAllResultsForWallet', 'App\Http\Controllers\LionResult@GetAllResultsForWallet');
     Route::get('/seeds', 'App\Http\Controllers\LionResult@seed');
     Route::get('/getplayedgames', 'App\Http\Controllers\LionResult@getPlayedGames');
     Route::put('/updateRecord', 'App\Http\Controllers\LionResult@updateRecord');
@@ -31,3 +30,4 @@ Route::group(['prefix' => 'v1'], function () {
 Route::get('/winningLion/{id}', [LionResult::class, 'winningLion']);
 Route::get('/claimPrize/{id}', [LionResult::class, 'claimPrize']);
 Route::put('/lionReturned/{id}', [LionResult::class, 'lionReturned']);
+Route::get('/getAllResultsForWallet/{id}', [LionResult::class, 'getAllResultsForWallet']);

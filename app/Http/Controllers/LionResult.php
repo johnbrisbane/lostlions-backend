@@ -73,7 +73,7 @@ class LionResult extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function GetAllResultsForWallet($id)
+    public function getAllResultsForWallet($id)
     {
         $result = Lion_result::where('wallet_id', '=', $id)->get();
         return response()->json($result);
@@ -181,7 +181,6 @@ class LionResult extends Controller
         $record = Lion_result::where('active', '=', '1')
             ->whereNull('wallet_id')
             ->whereNull('mint_address')
-            ->where('result', '=', '0 ') //devnet
             ->inRandomOrder()
             ->first();
 
