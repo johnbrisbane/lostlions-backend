@@ -218,7 +218,6 @@ class LionResult extends Controller
     {
         $result = Lion_result::where('wallet_id', '=', $id)
             ->where('result', '=', 1)
-            ->where('active', '=', 0)
             ->orderByDesc('updated_at')
             ->first();
         return response()->json($result);
